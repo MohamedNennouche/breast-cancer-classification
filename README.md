@@ -35,11 +35,17 @@ Ainsi que les packages suivant :
 |   KNN   |   94.15   |   94.11   |
 |   SVM   |   94.15   |   94.06   |
 |   MLP   |   94.15   |   94.15   |
-### En ayant appliqué une PCA
+### Avec une analyse en composantes principales
 On a gardé les 7 premières composantes principales représentant 91% de l'information, et on a retrouvé de meilleurs résultats qu'avec les variables originales
 |   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
 |   KNN   |   97.07   |   97.08   |
 |   SVM   |   98.24   |   98.25   |
 |   MLP   |   98.24   |   98.24   |
+### Avec une sélection de paramètres
+#### Sélection de paramètres embarquées (Random Forrest)
+|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|---      |:-:        |:-:        |
+|   Random Forrest  |   98.25  |   98.24   |
+|   Random Forrest + PCA   |   97.08   |   97.06  |
 ## Remarques
