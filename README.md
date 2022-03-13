@@ -25,7 +25,8 @@ Ainsi que les packages suivant :
     - KNN
     - SVM 
     - MLP
-5. 
+5. Application d'une analyse en composante principales et classification suivant les même modèles et étude comparative
+6. 
 
 ## Performances atteintes
 ### Avec les caractéristiques de base
@@ -34,5 +35,11 @@ Ainsi que les packages suivant :
 |   KNN   |   94.15   |   94.11   |
 |   SVM   |   94.15   |   94.06   |
 |   MLP   |   94.15   |   94.15   |
-
+### En ayant appliqué une PCA
+On a gardé les 7 premières composantes principales représentant 91% de l'information, et on a retrouvé de meilleurs résultats qu'avec les variables originales
+|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|---      |:-:        |:-:        |
+|   KNN   |   97.07   |   97.08   |
+|   SVM   |   98.24   |   98.25   |
+|   MLP   |   98.24   |   98.24   |
 ## Remarques
