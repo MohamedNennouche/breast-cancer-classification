@@ -26,7 +26,7 @@ Ainsi que les packages suivant :
     - SVM 
     - MLP
 5. Application d'une analyse en composante principales et classification suivant les même modèles et étude comparative
-6. 
+6. Application de plusieurs méthodes de sélection de caractéristiques et étude comparative avec les méthodes précédentes
 
 ## Performances atteintes
 ### Avec les caractéristiques de base
@@ -48,4 +48,29 @@ On a gardé les 7 premières composantes principales représentant 91% de l'info
 |---      |:-:        |:-:        |
 |   Random Forrest  |   98.25  |   98.24   |
 |   Random Forrest + PCA   |   97.08   |   97.06  |
+#### Sélection de paramètres statistiques
+1) **Test $\chi^2$**
+
+|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|---      |:-:        |:-:        |
+|   KNN   |   94.15   |   94.10   |
+|   SVM   |   94.15   |   94.06   |
+|   MLP   |   91.81   |   91.81   |
+2) **Information mutuelle**
+
+|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|---      |:-:        |:-:        |
+|   KNN   |   91.23   |   91.18   |
+|   SVM   |   94.15   |   94.08   |
+|   MLP   |   96.49   |   96.48   |
+3) **ANOVA**
+
+|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|---      |:-:        |:-:        |
+|   KNN   |   90.64   |   90.61   |
+|   SVM   |   94.15   |   94.08   |
+|   MLP   |   95.32   |   95.34   |
 ## Remarques
+- On a vu à travers ce projet l'intérêt du choix des paramètres à utiliser dans un classifieur en diminuant la dimensionnalité intelligemment on peut optimiser grandement notre modèle de classification
+- On a vu la puissance du Random Forrest qui embarque en son sein, un algorithme de sélection de paramètres extrêmement efficace nous donnant les meilleurs résultats sur ce dataset
+- Les tests statistiques ont chacun des avantages et inconvéniants et améliorent ou pénalisent légèrement des modèles différents et donc leurs choix dépend énormément de la situation qu'on traite. 
