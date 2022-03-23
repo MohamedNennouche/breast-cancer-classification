@@ -1,76 +1,78 @@
-## Breast cancer classification
-Le but de ce projet est de parvenir à mettre en place une classification binaire : 
-- M (malin)
-- B (bénin)
+## :hospital: Breast cancer classification
+The goal of this project is to achieve a binary classification: 
+- M (malignant)
+- B (benign)
 
-De cas de cancer du sein suivant plusieurs caractéristiques tels que la taille, la circonférence, la texture... Ce projet est disponible sur Kaggle à ce [lien](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data).
+Of breast cancer cases according to several characteristics such as size, circumference, texture... This project is available on Kaggle at this [link](https://www.kaggle.com/uciml/breast-cancer-wisconsin-data).
 
-## Disposition du dépôt
-* cancer-notebook.ipynb : Contient la totalité du projet réalisé
-* data.csv : Dataset disponible sur Kaggle
-## Pré-requis logiciels 
-Python 3.8 et +
-Ainsi que les packages suivant : 
+## :white_check_mark: Repository layout
+* cancer-notebook.ipynb : Contains the whole project
+* data.csv : Dataset available on Kaggle
+## :memo: Software requirements 
+Python 3.8 and up
+As well as the following packages : 
 - Numpy
 - Pandas
 - Seaborn
 - Scikit-learn
 - Matplotlib
 - Scipy
-## Contenu du projet
-1. Chargement des données
-2. Analyse globale des données du dataset
-3. Ensemble de visualisation des données et analyse de la corrélation entre les différentes variables
-4. Application d'un ensemble d'algorithme de classification en analysant les performances en test sur les variables de bases: 
+## :scroll: Content of the project
+1. Data loading
+2. Global analysis of the dataset
+3. Data visualization set and analysis of the correlation between the different variables
+4. Application of a set of classification algorithms by analyzing the test performance on the basic variables: 
     - KNN
     - SVM 
     - MLP
-5. Application d'une analyse en composante principales et classification suivant les même modèles et étude comparative
-6. Application de plusieurs méthodes de sélection de caractéristiques et étude comparative avec les méthodes précédentes
+5. Application of a principal component analysis and classification following the same models and comparative study
+6. Application of several feature selection methods and comparative study with the previous methods
 
-## Performances atteintes
-### Avec les caractéristiques de base
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+## :straight_ruler: Performance achieved
+### With the basic features
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   KNN   |   94.15   |   94.11   |
-|   SVM   |   94.15   |   94.06   |
-|   MLP   |   94.15   |   94.15   |
-### Avec une analyse en composantes principales
-On a gardé les 7 premières composantes principales représentant 91% de l'information, et on a retrouvé de meilleurs résultats qu'avec les variables originales
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|   KNN   |   94.15   |   93.63   |
+|   SVM   |   94.15   |   93.53   |
+|   MLP   |   94.15   |   93.72   |
+### With a principal component analysis
+We kept the first 7 principal components representing 91% of the information, and we found better results than with the original variables
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   KNN   |   97.07   |   97.08   |
-|   SVM   |   98.24   |   98.25   |
-|   MLP   |   98.24   |   98.24   |
-### Avec une sélection de paramètres
-#### Sélection de paramètres embarquées (Random Forrest)
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|   KNN   |   97.07   |   96.87   |
+|   SVM   |   98.24   |   98.12   |
+|   MLP   |   98.25   |   98.11   |
+### With a selection of parameters
+#### On-board parameter selection (Random Forest)
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   Random Forrest  |   98.25  |   98.24   |
-|   Random Forrest + PCA   |   97.08   |   97.06  |
-#### Sélection de paramètres statistiques
-1) **Test $\chi^2$**
+|   Random Forest  |   98.25  |   98.11   |
+|   Random Forest + PCA   |   97.08   |   96.83  |
+#### Selection of statistical parameters
+1) **$\Chi^2$** test
 
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   KNN   |   94.15   |   94.10   |
-|   SVM   |   94.15   |   94.06   |
-|   MLP   |   91.81   |   91.81   |
-2) **Information mutuelle**
+|   KNN   |   94.15   |   93.63   |
+|   SVM   |   94.15   |   93.53   |
+|   MLP   |   91.81   |   91.20   |
+2) **Mutual information**
 
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   KNN   |   91.23   |   91.18   |
-|   SVM   |   94.15   |   94.08   |
-|   MLP   |   96.49   |   96.48   |
+|   KNN   |   91.23   |   89.88   |
+|   SVM   |   94.15   |   93.58   |
+|   MLP   |   96.49   |   96.20   |
 3) **ANOVA**
 
-|   Algorithme choisi    |   Précision en test (%)|  F1 score (%) |
+|   Algorithm    |   Accuracy (%)|  F1 score (%) |
 |---      |:-:        |:-:        |
-|   KNN   |   90.64   |   90.61   |
-|   SVM   |   94.15   |   94.08   |
-|   MLP   |   95.32   |   95.34   |
-## Remarques
-- On a vu à travers ce projet l'intérêt du choix des paramètres à utiliser dans un classifieur en diminuant la dimensionnalité intelligemment on peut optimiser grandement notre modèle de classification
-- On a vu la puissance du Random Forrest qui embarque en son sein, un algorithme de sélection de paramètres extrêmement efficace nous donnant les meilleurs résultats sur ce dataset
-- Les tests statistiques ont chacun des avantages et inconvéniants et améliorent ou pénalisent légèrement des modèles différents et donc leurs choix dépend énormément de la situation qu'on traite. 
+|   KNN   |   90.64   |   90.48   |
+|   SVM   |   94.15   |   93.58   |
+|   MLP   |   95.32   |   95.01   |
+## :pushpin: Remarks
+- We have seen through this project the interest of the choice of the parameters to be used in a classifier by decreasing the dimensionality intelligently we can greatly optimize our classification model
+- We have seen the power of the Random Forest which embeds within it, an extremely efficient parameter selection algorithm giving us the best results on this dataset
+- Statistical tests each have advantages and disadvantages and improve or penalize slightly different models and therefore their choice depends greatly on the situation we are dealing with. 
+## :page_facing_up: Conclusion
+We can see through this project that the best results were obtained with the SVM and the MLP with the application of a principal component analysis or with the use of Random Forrest coupled with its embedded feature selection algorithm 
